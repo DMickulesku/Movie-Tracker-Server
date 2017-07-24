@@ -9,6 +9,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "pg": "^7.0.2"
   }
 }
