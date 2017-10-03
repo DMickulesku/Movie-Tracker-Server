@@ -1,10 +1,16 @@
 var express = require('express')
 var knex = require('../db/knex')
 var router = express.Router()
+var cors = require('cors')
+var bodyParser = require('body-parser')
+
+router.use(cors())
+router.use(bodyParser.urlencoded({extended: false}))
+router.use(bodyParser.json())
 
 router.get('/', function (req, res) {
   knex('movies')
-    .then(movies => {
+    .then((movies) => {
       res.json(movies)
     })
 })
@@ -13,18 +19,22 @@ router.get('/:id', (req, res) => {
   let id = req.params.id
   knex('movies')
     .where('id', id)
-    .then(movies => {
+    .then((movies) => {
       res.json(movies)
     })
 })
 
 router.post('/', (req, res) => {
   let post = req.body;
+  post.year_released = post.year
+  delete post.year
+  console.log(post);
   knex('movies').insert(post)
   .returning('*')
-  .then(movies)
+  .then((movies) => {
+    console.log(movies);
     res.json(movies)
-
+  })
 })
 
 router.put('/:id', (req, res) => {
@@ -41,10 +51,9 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   let id = req.params.id
   knex('movies')
-    .where('id', id).del()
+    .where('id', id).del().returning("*")
     .then(deleted => {
-      res.json({message: 'Movie Deleted!'
-    })
+      res.json({deleted})
   })
 
 })

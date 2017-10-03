@@ -6,7 +6,6 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('movies').insert([
         {
-          id: 1,
           title: 'Black Book',
           director: 'Paul Verhoeven',
           genre: 'Drama',
@@ -14,7 +13,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 2,
           title: 'Trainspotting',
           director: 'Danny Boyle',
           genre: 'Drama',
@@ -22,7 +20,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 3,
           title: 'Hunt for the Wilderpeople',
           director: 'Taika Waititi',
           genre: 'Comedy',
@@ -30,7 +27,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 4,
           title: 'The Place Beyond the Pines',
           director: 'Derek Cianfrance',
           genre: 'Drama',
@@ -38,7 +34,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 5,
           title: 'Ex Machina',
           director: 'Alex Garland',
           genre: 'Sci-Fi',
@@ -46,7 +41,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 6,
           title: 'Ferris Bueller\'s Day Off',
           director: 'John Hughes',
           genre: 'Comedy',
@@ -54,7 +48,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 7,
           title: 'House of 1000 Corpses',
           director: 'Rob Zombie',
           genre: 'Horror',
@@ -62,7 +55,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 8,
           title: 'The Hateful Eight',
           director: 'Quentin Tarantino',
           genre: 'Mystery',
@@ -70,7 +62,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 9,
           title: 'Rad',
           director: 'Hal Needham',
           genre: 'Drama',
@@ -78,7 +69,6 @@ exports.seed = function(knex, Promise) {
         },
 
         {
-          id: 10,
           title: 'Taxi Driver',
           director: 'Martin Scorsese',
           genre: 'Drama',
