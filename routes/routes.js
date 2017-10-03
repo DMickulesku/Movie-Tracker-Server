@@ -25,14 +25,13 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  let post = req.body;
-  post.year_released = post.year
-  delete post.year
-  console.log(post);
-  knex('movies').insert(post)
+  let post = req.body
+  console.log(post)
+  knex('movies')
+  .insert(post)
   .returning('*')
-  .then((movies) => {
-    console.log(movies);
+  .then((movie) => {
+    console.log(movie)
     res.json(movies)
   })
 })
